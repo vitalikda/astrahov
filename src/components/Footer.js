@@ -61,46 +61,32 @@ const Footer = class extends React.Component {
           <div className='row'>
             <div className='col-md-12 text-center'>
               <p className='breadcrumbs'>
-                <span className='mr-3'>
-                  <Link to='/' className='navbar-item'>
-                    Главная
-                  </Link>
-                </span>
-                <span className='mr-3'>
-                  <Link className='navbar-item' to='/about'>
-                    Обо мне
-                  </Link>
-                </span>
-                <span className='mr-3'>
-                  <Link className='navbar-item' to='/products'>
-                    Услуги
-                  </Link>
-                </span>
-                <span className='mr-3'>
-                  <Link className='navbar-item' to='/contact/schedule'>
-                    Расписание
-                  </Link>
-                </span>
-                <span className='mr-3'>
-                  <Link className='navbar-item' to='/blog'>
-                    Статьи
-                  </Link>
-                </span>
-                <span className='mr-3'>
-                  <Link className='navbar-item' to='/contact'>
-                    Контакты
-                  </Link>
-                </span>
-                <span className='mr-3'>
-                  <a
-                    className='navbar-item'
-                    href='/admin/'
-                    target='_blank'
-                    rel='noopener noreferrer'
-                  >
-                    Кабинет
-                  </a>
-                </span>
+                <Link to='/' className='navbar-item mr-3'>
+                  Главная
+                </Link>
+                <Link className='navbar-item mr-3' to='/about'>
+                  Обо мне
+                </Link>
+                <Link className='navbar-item mr-3' to='/products'>
+                  Услуги
+                </Link>
+                <Link className='navbar-item mr-3' to='/contact/schedule'>
+                  Расписание
+                </Link>
+                <Link className='navbar-item mr-3' to='/blog'>
+                  Статьи
+                </Link>
+                <Link className='navbar-item mr-3' to='/contact'>
+                  Контакты
+                </Link>
+                <a
+                  className='navbar-item mr-3'
+                  href='/admin/'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                >
+                  Кабинет
+                </a>
               </p>
             </div>
           </div>
