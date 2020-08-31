@@ -69,7 +69,7 @@ export const ProductPageTemplate = ({
               target='_blank'
               className='gallery image-popup img d-flex align-items-center'
               style={{
-                backgroundImage: `url(${'https://instagram.fhel6-1.fna.fbcdn.net/v/t51.2885-15/e35/p1080x1080/117419434_656845391590529_4049853595886823799_n.jpg?_nc_ht=instagram.fhel6-1.fna.fbcdn.net&_nc_cat=105&_nc_ohc=A1u7bNGkFYYAX-T854q&oh=98cb056f51ec075c3f145b44170e3c4f&oe=5F72919D'})`,
+                backgroundImage: `url(${'/img/instagram-1.jpg'})`,
               }}
             >
               <div className='icon mb-4 d-flex align-items-center justify-content-center'>
@@ -85,7 +85,7 @@ export const ProductPageTemplate = ({
               target='_blank'
               className='gallery image-popup img d-flex align-items-center'
               style={{
-                backgroundImage: `url(${'https://scontent-hel2-1.cdninstagram.com/v/t51.2885-15/e35/115820923_328007528224195_6433606234252855939_n.jpg?_nc_ht=scontent-hel2-1.cdninstagram.com&_nc_cat=107&_nc_ohc=bmLoV2pf2YUAX-HXx21&oh=bcb5679af29d051d3bfd3fefe49b7ac7&oe=5F4B7B8B'})`,
+                backgroundImage: `url(${'/img/instagram-2.jpg'})`,
               }}
             >
               <div className='icon mb-4 d-flex align-items-center justify-content-center'>
@@ -101,7 +101,7 @@ export const ProductPageTemplate = ({
               target='_blank'
               className='gallery image-popup img d-flex align-items-center'
               style={{
-                backgroundImage: `url(${'https://instagram.fhel3-1.fna.fbcdn.net/v/t51.2885-15/e35/s1080x1080/116473515_1213295329010206_4128797228406217245_n.jpg?_nc_ht=instagram.fhel3-1.fna.fbcdn.net&_nc_cat=110&_nc_ohc=_z7llAoLOfQAX_IqNa8&oh=a02fbc640dc8c21bc6592b5e30a5b0c8&oe=5F7398F4'})`,
+                backgroundImage: `url(${'/img/instagram-3.jpg'})`,
               }}
             >
               <div className='icon mb-4 d-flex align-items-center justify-content-center'>
@@ -117,7 +117,7 @@ export const ProductPageTemplate = ({
               target='_blank'
               className='gallery image-popup img d-flex align-items-center'
               style={{
-                backgroundImage: `url(${'https://instagram.fhel6-1.fna.fbcdn.net/v/t51.2885-15/e35/103526736_264449581298885_5661593467512079681_n.jpg?_nc_ht=instagram.fhel6-1.fna.fbcdn.net&_nc_cat=105&_nc_ohc=c80z55VE1QAAX_MdiP4&oh=7a5ed7c625881efe54cb48084e00f8e9&oe=5F4B2752'})`,
+                backgroundImage: `url(${'/img/instagram-4.jpg'})`,
               }}
             >
               <div className='icon mb-4 d-flex align-items-center justify-content-center'>
