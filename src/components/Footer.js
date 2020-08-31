@@ -60,34 +60,34 @@ const Footer = class extends React.Component {
           </div>
           <div className='row'>
             <div className='col-md-12 text-center'>
-              <p className='breadcrumbs'>
-                <Link to='/' className='navbar-item mr-3'>
+              <nav className='nav justify-content-center mb-3'>
+                <Link to='/' className='nav-link'>
                   Главная
                 </Link>
-                <Link className='navbar-item mr-3' to='/about'>
+                <Link className='nav-link' to='/about'>
                   Обо мне
                 </Link>
-                <Link className='navbar-item mr-3' to='/products'>
+                <Link className='nav-link' to='/products'>
                   Услуги
                 </Link>
-                <Link className='navbar-item mr-3' to='/contact/schedule'>
+                <Link className='nav-link' to='/contact/schedule'>
                   Расписание
                 </Link>
-                <Link className='navbar-item mr-3' to='/blog'>
+                <Link className='nav-link' to='/blog'>
                   Статьи
                 </Link>
-                <Link className='navbar-item mr-3' to='/contact'>
+                <Link className='nav-link' to='/contact'>
                   Контакты
                 </Link>
                 <a
-                  className='navbar-item mr-3'
+                  className='nav-link'
                   href='/admin/'
                   target='_blank'
                   rel='noopener noreferrer'
                 >
                   Кабинет
                 </a>
-              </p>
+              </nav>
             </div>
           </div>
           <div className='row'>
