@@ -1,4 +1,4 @@
-# business template made with gatsby and netlify cms
+# template made with gatsby and netlify cms
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/dfd7c6fc-7784-4f22-a82c-a083d748cd02/deploy-status)](https://app.netlify.com/sites/astrah/deploys)
 
