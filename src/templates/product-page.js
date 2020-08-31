@@ -1,108 +1,137 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { graphql } from 'gatsby'
-import Layout from '../components/Layout'
-import Features from '../components/Features'
-import Testimonials from '../components/Testimonials'
-import Pricing from '../components/Pricing'
-import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Link, graphql } from 'gatsby';
+
+import Layout from '../components/Layout';
+import Features from '../components/Features';
+// import Pricing from '../components/Pricing';
+// import PreviewCompatibleImage from '../components/PreviewCompatibleImage';
+
+import { IoLogoInstagram } from 'react-icons/io';
 
 export const ProductPageTemplate = ({
   image,
   title,
   heading,
-  description,
   intro,
-  main,
-  testimonials,
-  fullImage,
-  pricing,
+  // description,
 }) => (
-  <div className="content">
-    <div
-      className="full-width-image-container margin-top-0"
+  <div>
+    {/* Hero section */}
+    <section
+      className='hero-wrap'
       style={{
         backgroundImage: `url(${
           !!image.childImageSharp ? image.childImageSharp.fluid.src : image
         })`,
       }}
     >
-      <h2
-        className="has-text-weight-bold is-size-1"
-        style={{
-          boxShadow: '0.5rem 0 0 #f40, -0.5rem 0 0 #f40',
-          backgroundColor: '#f40',
-          color: 'white',
-          padding: '1rem',
-        }}
-      >
-        {title}
-      </h2>
-    </div>
-    <section className="section section--gradient">
-      <div className="container">
-        <div className="section">
-          <div className="columns">
-            <div className="column is-7 is-offset-1">
-              <h3 className="has-text-weight-semibold is-size-2">{heading}</h3>
-              <p>{description}</p>
-            </div>
+      <div className='overlay'></div>
+      <div className='container'>
+        <div className='row no-gutters slider-text js-fullheight align-items-center justify-content-center'>
+          <div className='col-md-9 text-center'>
+            <h1 className='mb-3 bread'>{heading}</h1>
+            <p className='breadcrumbs'>
+              <span className='mr-2'>
+                <Link to='/'>Главная</Link>
+              </span>{' '}
+              <span>{title}</span>
+            </p>
           </div>
-          <div className="columns">
-            <div className="column is-10 is-offset-1">
-              <Features gridItems={intro.blurbs} />
-              <div className="columns">
-                <div className="column is-7">
-                  <h3 className="has-text-weight-semibold is-size-3">
-                    {main.heading}
-                  </h3>
-                  <p>{main.description}</p>
-                </div>
+        </div>
+      </div>
+    </section>
+    {/* Services section */}
+    <section className='ftco-section'>
+      <div className='container'>
+        <div className='row justify-content-center mb-5 pb-3'>
+          <div className='col-md-12 heading-section text-center'>
+            <h3 className='subheading'>Услуги</h3>
+            <h2 className='mb-1'>Выберите тип массажа</h2>
+          </div>
+        </div>
+        <Features gridItems={intro.blurbs} />
+      </div>
+    </section>
+    {/* Instagram section */}
+    <section className='ftco-gallery ftco-section'>
+      <div className='container'>
+        <div className='row justify-content-center mb-5 pb-3'>
+          <div className='col-md-7 heading-section  text-center'>
+            <h3 className='subheading'>Инстаграм</h3>
+            <h2 className='mb-1'>Галерея релакса</h2>
+          </div>
+        </div>
+        <div className='row'>
+          <div className='col-md-3 '>
+            <a
+              href='https://www.instagram.com/andrei_astakhov_/'
+              target='_blank'
+              className='gallery image-popup img d-flex align-items-center'
+              style={{
+                backgroundImage: `url(${'https://instagram.fhel6-1.fna.fbcdn.net/v/t51.2885-15/e35/p1080x1080/117419434_656845391590529_4049853595886823799_n.jpg?_nc_ht=instagram.fhel6-1.fna.fbcdn.net&_nc_cat=105&_nc_ohc=A1u7bNGkFYYAX-T854q&oh=98cb056f51ec075c3f145b44170e3c4f&oe=5F72919D'})`,
+              }}
+            >
+              <div className='icon mb-4 d-flex align-items-center justify-content-center'>
+                <span className=''>
+                  <IoLogoInstagram />
+                </span>
               </div>
-              <div className="tile is-ancestor">
-                <div className="tile is-vertical">
-                  <div className="tile">
-                    <div className="tile is-parent is-vertical">
-                      <article className="tile is-child">
-                        <PreviewCompatibleImage imageInfo={main.image1} />
-                      </article>
-                    </div>
-                    <div className="tile is-parent">
-                      <article className="tile is-child">
-                        <PreviewCompatibleImage imageInfo={main.image2} />
-                      </article>
-                    </div>
-                  </div>
-                  <div className="tile is-parent">
-                    <article className="tile is-child">
-                      <PreviewCompatibleImage imageInfo={main.image3} />
-                    </article>
-                  </div>
-                </div>
+            </a>
+          </div>
+          <div className='col-md-3 '>
+            <a
+              href='https://www.instagram.com/andrei_astakhov_/'
+              target='_blank'
+              className='gallery image-popup img d-flex align-items-center'
+              style={{
+                backgroundImage: `url(${'https://scontent-hel2-1.cdninstagram.com/v/t51.2885-15/e35/115820923_328007528224195_6433606234252855939_n.jpg?_nc_ht=scontent-hel2-1.cdninstagram.com&_nc_cat=107&_nc_ohc=bmLoV2pf2YUAX-HXx21&oh=bcb5679af29d051d3bfd3fefe49b7ac7&oe=5F4B7B8B'})`,
+              }}
+            >
+              <div className='icon mb-4 d-flex align-items-center justify-content-center'>
+                <span className=''>
+                  <IoLogoInstagram />
+                </span>
               </div>
-              <Testimonials testimonials={testimonials} />
-              <div
-                className="full-width-image-container"
-                style={{
-                  backgroundImage: `url(${
-                    fullImage.childImageSharp
-                      ? fullImage.childImageSharp.fluid.src
-                      : fullImage
-                  })`,
-                }}
-              />
-              <h2 className="has-text-weight-semibold is-size-2">
-                {pricing.heading}
-              </h2>
-              <p className="is-size-5">{pricing.description}</p>
-              <Pricing data={pricing.plans} />
-            </div>
+            </a>
+          </div>
+          <div className='col-md-3 '>
+            <a
+              href='https://www.instagram.com/andrei_astakhov_/'
+              target='_blank'
+              className='gallery image-popup img d-flex align-items-center'
+              style={{
+                backgroundImage: `url(${'https://instagram.fhel3-1.fna.fbcdn.net/v/t51.2885-15/e35/s1080x1080/116473515_1213295329010206_4128797228406217245_n.jpg?_nc_ht=instagram.fhel3-1.fna.fbcdn.net&_nc_cat=110&_nc_ohc=_z7llAoLOfQAX_IqNa8&oh=a02fbc640dc8c21bc6592b5e30a5b0c8&oe=5F7398F4'})`,
+              }}
+            >
+              <div className='icon mb-4 d-flex align-items-center justify-content-center'>
+                <span className=''>
+                  <IoLogoInstagram />
+                </span>
+              </div>
+            </a>
+          </div>
+          <div className='col-md-3 '>
+            <a
+              href='https://www.instagram.com/andrei_astakhov_/'
+              target='_blank'
+              className='gallery image-popup img d-flex align-items-center'
+              style={{
+                backgroundImage: `url(${'https://instagram.fhel6-1.fna.fbcdn.net/v/t51.2885-15/e35/103526736_264449581298885_5661593467512079681_n.jpg?_nc_ht=instagram.fhel6-1.fna.fbcdn.net&_nc_cat=105&_nc_ohc=c80z55VE1QAAX_MdiP4&oh=7a5ed7c625881efe54cb48084e00f8e9&oe=5F4B2752'})`,
+              }}
+            >
+              <div className='icon mb-4 d-flex align-items-center justify-content-center'>
+                <span className=''>
+                  <IoLogoInstagram />
+                </span>
+              </div>
+            </a>
           </div>
         </div>
       </div>
     </section>
   </div>
-)
+);
 
 ProductPageTemplate.propTypes = {
   image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
@@ -112,24 +141,10 @@ ProductPageTemplate.propTypes = {
   intro: PropTypes.shape({
     blurbs: PropTypes.array,
   }),
-  main: PropTypes.shape({
-    heading: PropTypes.string,
-    description: PropTypes.string,
-    image1: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
-    image2: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
-    image3: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
-  }),
-  testimonials: PropTypes.array,
-  fullImage: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
-  pricing: PropTypes.shape({
-    heading: PropTypes.string,
-    description: PropTypes.string,
-    plans: PropTypes.array,
-  }),
-}
+};
 
 const ProductPage = ({ data }) => {
-  const { frontmatter } = data.markdownRemark
+  const { frontmatter } = data.markdownRemark;
 
   return (
     <Layout>
@@ -139,14 +154,10 @@ const ProductPage = ({ data }) => {
         heading={frontmatter.heading}
         description={frontmatter.description}
         intro={frontmatter.intro}
-        main={frontmatter.main}
-        testimonials={frontmatter.testimonials}
-        fullImage={frontmatter.full_image}
-        pricing={frontmatter.pricing}
       />
     </Layout>
-  )
-}
+  );
+};
 
 ProductPage.propTypes = {
   data: PropTypes.shape({
@@ -154,9 +165,9 @@ ProductPage.propTypes = {
       frontmatter: PropTypes.object,
     }),
   }),
-}
+};
 
-export default ProductPage
+export default ProductPage;
 
 export const productPageQuery = graphql`
   query ProductPage($id: String!) {
@@ -176,72 +187,18 @@ export const productPageQuery = graphql`
           blurbs {
             image {
               childImageSharp {
-                fluid(maxWidth: 240, quality: 64) {
+                fluid(maxWidth: 500, quality: 80) {
                   ...GatsbyImageSharpFluid
                 }
               }
             }
+            heading
             text
           }
           heading
           description
         }
-        main {
-          heading
-          description
-          image1 {
-            alt
-            image {
-              childImageSharp {
-                fluid(maxWidth: 526, quality: 92) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
-          }
-          image2 {
-            alt
-            image {
-              childImageSharp {
-                fluid(maxWidth: 526, quality: 92) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
-          }
-          image3 {
-            alt
-            image {
-              childImageSharp {
-                fluid(maxWidth: 1075, quality: 72) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
-          }
-        }
-        testimonials {
-          author
-          quote
-        }
-        full_image {
-          childImageSharp {
-            fluid(maxWidth: 2048, quality: 100) {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
-        pricing {
-          heading
-          description
-          plans {
-            description
-            items
-            plan
-            price
-          }
-        }
       }
     }
   }
-`
+`;

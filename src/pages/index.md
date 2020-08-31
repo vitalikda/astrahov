@@ -1,16 +1,14 @@
 ---
 templateKey: index-page
-title: Great coffee with a conscience
-image: /img/home-jumbotron.jpg
-heading: Great coffee with a conscience
-subheading: Support sustainable farming while enjoying a cup
+title: Эффективная терапия против стресса
+image: /img/bg_2.jpg
+heading: Эффективная терапия против стресса.
+subheading: Массаж – эффективный метод лечения различных травм и заболеваний
 mainpitch:
-  title: Why Kaldi
+  title: Почему стоит сходить на массаж
+  image: /img/intro.jpg
   description: >
-    Kaldi is the coffee store for everyone who believes that great coffee
-    shouldn't just taste good, it should do good too. We source all of our beans
-    directly from small scale sustainable farmers and make sure part of the
-    profits are reinvested in their communities.
+    Далеко-далеко, за словесными горами, вдали от стран Vokalia и Consonantia живут слепые тексты. Отдельно они живут в Bookmarksgrove прямо на берегу Семантики, большой языковой океан.
 description: >-
   Kaldi is the ultimate spot for coffee lovers who want to learn about their
   java’s origin and support the farmers that grew it. We take coffee production,
@@ -18,33 +16,30 @@ description: >-
   anyone.
 intro:
   blurbs:
-    - image: /img/coffee.png
+    - image: /img/program-1.jpg
+      heading: Медицинский массаж
       text: >
-        We sell green and roasted coffee beans that are sourced directly from
-        independent farmers and farm cooperatives. We’re proud to offer a
-        variety of coffee beans grown with great care for the environment and
-        local communities. Check our post or contact us directly for current
-        availability.
-    - image: /img/coffee-gear.png
+        Рядом с ними протекает небольшая речка Дуден, снабжающая его необходимыми регелиалами. Это райская страна.
+    - image: /img/program-2.jpg
+      heading: Медицинский массаж
       text: >
-        We offer a small, but carefully curated selection of brewing gear and
-        tools for every taste and experience level. No matter if you roast your
-        own beans or just bought your first french press, you’ll find a gadget
-        to fall in love with in our shop.
-    - image: /img/tutorials.png
+        Рядом с ними протекает небольшая речка Дуден, снабжающая его необходимыми регелиалами. Это райская страна.
+    - image: /img/program-3.jpg
+      heading: Медицинский массаж
       text: >
-        Love a great cup of coffee, but never knew how to make one? Bought a
-        fancy new Chemex but have no clue how to use it? Don't worry, we’re here
-        to help. You can schedule a custom 1-on-1 consultation with our baristas
-        to learn anything you want to know about coffee roasting and brewing.
-        Email us or call the store for details.
-    - image: /img/meeting-space.png
+        Рядом с ними протекает небольшая речка Дуден, снабжающая его необходимыми регелиалами. Это райская страна.
+    - image: /img/program-4.jpg
+      heading: Медицинский массаж
       text: >
-        We believe that good coffee has the power to bring people together.
-        That’s why we decided to turn a corner of our shop into a cozy meeting
-        space where you can hang out with fellow coffee lovers and learn about
-        coffee making techniques. All of the artwork on display there is for
-        sale. The full price you pay goes to the artist.
+        Рядом с ними протекает небольшая речка Дуден, снабжающая его необходимыми регелиалами. Это райская страна.
+    - image: /img/program-5.jpg
+      heading: Медицинский массаж
+      text: >
+        Рядом с ними протекает небольшая речка Дуден, снабжающая его необходимыми регелиалами. Это райская страна.
+    - image: /img/program-6.jpg
+      heading: Медицинский массаж
+      text: >
+        Рядом с ними протекает небольшая речка Дуден, снабжающая его необходимыми регелиалами. Это райская страна.
   heading: What we offer
   description: >
     Kaldi is the ultimate spot for coffee lovers who want to learn about their
@@ -67,4 +62,30 @@ main:
   image3:
     alt: Coffee beans
     image: /img/products-grid1.jpg
+testimonials:
+  - author: Нелечка Касумова
+    image: /img/person_2.jpg
+    position: Клиент
+    quote: >-
+      Я очень благодарна Андрею. Более года у меня каждый день болела шея, обращалась к различным врачам, делала массаж, ничего не помогало. Обратилась к Андрею и за одно посещение я навсегда забыла о боли в шее. Спасибо Вам!
+  - author: Екатерина К.
+    image: /img/person_1.jpg
+    position: Клиент
+    quote: >-
+      Была на приеме и не однажды! Очень квалифицированный и хороший врач! Помог сразу же поднять ферритин и прогестерон. Очень довольна.
+  - author: Алексей
+    image: /img/person_4.jpg
+    position: Клиент
+    quote: >-
+      Андрей внимательный, вдумчивый и интересный специалист. Он меня замечательно обследовал, определил болевые точки, мы составили план лечения и я начал его выполнять. Лечение уже выявило свой эффект, так, что рекомендую данного врача.
+  - author: Нелечка Касумова
+    image: /img/person_2.jpg
+    position: Клиент
+    quote: >-
+      Я очень благодарна Андрею. Более года у меня каждый день болела шея, обращалась к различным врачам, делала массаж, ничего не помогало. Обратилась к Андрею и за одно посещение я навсегда забыла о боли в шее. Спасибо Вам!
+  - author: Екатерина К.
+    image: /img/person_1.jpg
+    position: Клиент
+    quote: >-
+      Была на приеме и не однажды! Очень квалифицированный и хороший врач! Помог сразу же поднять ферритин и прогестерон. Очень довольна.
 ---

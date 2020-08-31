@@ -1,115 +1,133 @@
-import React from 'react'
-import { Link } from 'gatsby'
+import React from 'react';
+import { Link } from 'gatsby';
 
-import logo from '../img/logo.svg'
-import facebook from '../img/social/facebook.svg'
-import instagram from '../img/social/instagram.svg'
-import twitter from '../img/social/twitter.svg'
-import vimeo from '../img/social/vimeo.svg'
+import { FaTelegramPlane } from 'react-icons/fa';
+import { FaWhatsapp } from 'react-icons/fa';
+import { FaInstagram } from 'react-icons/fa';
+import { FaHeart } from 'react-icons/fa';
+
+const currentYear = new Date().getFullYear();
 
 const Footer = class extends React.Component {
   render() {
     return (
-      <footer className="footer has-background-black has-text-white-ter">
-        <div className="content has-text-centered">
-          <img
-            src={logo}
-            alt="Kaldi"
-            style={{ width: '14em', height: '10em' }}
-          />
-        </div>
-        <div className="content has-text-centered has-background-black has-text-white-ter">
-          <div className="container has-background-black has-text-white-ter">
-            <div style={{ maxWidth: '100vw' }} className="columns">
-              <div className="column is-4">
-                <section className="menu">
-                  <ul className="menu-list">
-                    <li>
-                      <Link to="/" className="navbar-item">
-                        Home
-                      </Link>
-                    </li>
-                    <li>
-                      <Link className="navbar-item" to="/about">
-                        About
-                      </Link>
-                    </li>
-                    <li>
-                      <Link className="navbar-item" to="/products">
-                        Products
-                      </Link>
-                    </li>
-                    <li>
-                      <Link className="navbar-item" to="/contact/examples">
-                        Form Examples
-                      </Link>
-                    </li>
-                    <li>
-                      <a
-                        className="navbar-item"
-                        href="/admin/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        Admin
-                      </a>
-                    </li>
-                  </ul>
-                </section>
+      <footer className='ftco-footer ftco-section img'>
+        <div className='overlay'></div>
+        <div className='container'>
+          <div className='row mb-5'>
+            <div className='col-lg-3 col-md-6 mb-5 mb-md-5 '>
+              <div className='ftco-footer-widget mb-4'>
+                <h1 className='logo'>Андрей Астахов</h1>
               </div>
-              <div className="column is-4">
-                <section>
-                  <ul className="menu-list">
-                    <li>
-                      <Link className="navbar-item" to="/blog">
-                        Latest Stories
-                      </Link>
-                    </li>
-                    <li>
-                      <Link className="navbar-item" to="/contact">
-                        Contact
-                      </Link>
-                    </li>
-                  </ul>
-                </section>
+            </div>
+            <div className='col-lg col-md-6 mb-5 mb-md-5 '>
+              <div className='ftco-footer-widget mb-4'>
+                <h2 className='location'>
+                  Нижняя Красносельская улица, 4, Москва
+                </h2>
               </div>
-              <div className="column is-4 social">
-                <a title="facebook" href="https://facebook.com">
-                  <img
-                    src={facebook}
-                    alt="Facebook"
-                    style={{ width: '1em', height: '1em' }}
-                  />
-                </a>
-                <a title="twitter" href="https://twitter.com">
-                  <img
-                    className="fas fa-lg"
-                    src={twitter}
-                    alt="Twitter"
-                    style={{ width: '1em', height: '1em' }}
-                  />
-                </a>
-                <a title="instagram" href="https://instagram.com">
-                  <img
-                    src={instagram}
-                    alt="Instagram"
-                    style={{ width: '1em', height: '1em' }}
-                  />
-                </a>
-                <a title="vimeo" href="https://vimeo.com">
-                  <img
-                    src={vimeo}
-                    alt="Vimeo"
-                    style={{ width: '1em', height: '1em' }}
-                  />
-                </a>
+            </div>
+            <div className='col-lg-3 col-md-6 mb-5 mb-md-5'>
+              <div className='ftco-footer-widget mb-4'>
+                <ul className='ftco-footer-social list-unstyled float-md-left float-lft'>
+                  <li className=''>
+                    <a href='https://t.me/andrei_astakhov_' target='_blank'>
+                      <span>
+                        <FaTelegramPlane />
+                      </span>
+                    </a>
+                  </li>
+                  <li className=''>
+                    <a href='https://wa.me/79654177613' target='_blank'>
+                      <span>
+                        <FaWhatsapp />
+                      </span>
+                    </a>
+                  </li>
+                  <li className=''>
+                    <a
+                      href='https://instagram.com/andrei_astakhov_/'
+                      target='_blank'
+                    >
+                      <span>
+                        <FaInstagram />
+                      </span>
+                    </a>
+                  </li>
+                </ul>
               </div>
+            </div>
+          </div>
+          <div className='row'>
+            <div className='col-md-12 text-center'>
+              <p className='breadcrumbs'>
+                <span className='mr-3'>
+                  <Link to='/' className='navbar-item'>
+                    Главная
+                  </Link>
+                </span>
+                <span className='mr-3'>
+                  <Link className='navbar-item' to='/about'>
+                    Обо мне
+                  </Link>
+                </span>
+                <span className='mr-3'>
+                  <Link className='navbar-item' to='/products'>
+                    Услуги
+                  </Link>
+                </span>
+                <span className='mr-3'>
+                  <Link className='navbar-item' to='/contact/schedule'>
+                    Расписание
+                  </Link>
+                </span>
+                <span className='mr-3'>
+                  <Link className='navbar-item' to='/blog'>
+                    Статьи
+                  </Link>
+                </span>
+                <span className='mr-3'>
+                  <Link className='navbar-item' to='/contact'>
+                    Контакты
+                  </Link>
+                </span>
+                <span className='mr-3'>
+                  <a
+                    className='navbar-item'
+                    href='/admin/'
+                    target='_blank'
+                    rel='noopener noreferrer'
+                  >
+                    Кабинет
+                  </a>
+                </span>
+              </p>
+            </div>
+          </div>
+          <div className='row'>
+            <div className='col-md-12 text-center'>
+              <p>
+                Copyright &copy; {currentYear} All rights reserved | This
+                website is made with {''}
+                <i
+                  style={{
+                    position: 'relative',
+                    bottom: '2px',
+                  }}
+                >
+                  <FaHeart />
+                </i>{' '}
+                by {''}
+                <a href='https://vitaly.im' target='_blank'>
+                  Vitaly
+                </a>
+              </p>
             </div>
           </div>
         </div>
       </footer>
-    )
+    );
   }
-}
+};
 
-export default Footer
+export default Footer;

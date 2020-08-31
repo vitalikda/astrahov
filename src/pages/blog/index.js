@@ -1,38 +1,130 @@
-import React from 'react'
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Link, graphql } from 'gatsby';
 
-import Layout from '../../components/Layout'
-import BlogRoll from '../../components/BlogRoll'
+import Layout from '../../components/Layout';
 
-export default class BlogIndexPage extends React.Component {
+class BlogIndexPage extends React.Component {
   render() {
+    const { data } = this.props;
+    const { edges: posts } = data.allMarkdownRemark;
+
     return (
       <Layout>
-        <div
-          className="full-width-image-container margin-top-0"
+        {/* Hero section */}
+        <section
+          className='hero-wrap'
           style={{
-            backgroundImage: `url('/img/blog-index.jpg')`,
+            backgroundImage: `url(${'/img/image_2.jpg'})`,
           }}
         >
-          <h1
-            className="has-text-weight-bold is-size-1"
-            style={{
-              boxShadow: '0.5rem 0 0 #f40, -0.5rem 0 0 #f40',
-              backgroundColor: '#f40',
-              color: 'white',
-              padding: '1rem',
-            }}
-          >
-            Latest Stories
-          </h1>
-        </div>
-        <section className="section">
-          <div className="container">
-            <div className="content">
-              <BlogRoll />
+          <div className='overlay'></div>
+          <div className='container'>
+            <div className='row no-gutters slider-text js-fullheight align-items-center justify-content-center'>
+              <div className='col-md-9 text-center'>
+                <h1 className='mb-3 bread'>Статьи</h1>
+                <p className='breadcrumbs'>
+                  <span className='mr-2'>
+                    <Link to='/'>Главная</Link>
+                  </span>{' '}
+                  <span>Статьи</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+        {/* Blog section */}
+        <section className='ftco-section bg-light'>
+          <div className='container'>
+            <div className='row d-flex'>
+              {posts &&
+                posts.map(({ node: post }) => (
+                  <div key={post.id} className='col-md-4 d-flex '>
+                    <div className='blog-entry justify-content-end'>
+                      <Link
+                        to={post.fields.slug}
+                        className='block-20'
+                        style={{
+                          backgroundImage: `url(${
+                            !!post.frontmatter.featuredimage.childImageSharp
+                              ? post.frontmatter.featuredimage.childImageSharp
+                                  .fluid.src
+                              : null
+                          })`,
+                        }}
+                      />
+                      <div className='text p-4 float-right d-block'>
+                        <div className='d-flex align-items-center pt-2 mb-4'>
+                          <div className='one'>
+                            <span className='day'>
+                              {post.frontmatter.date.split(' ')[0]}
+                            </span>
+                          </div>
+                          <div className='two'>
+                            <span className='mos'>
+                              {post.frontmatter.date.split(' ')[1]}
+                            </span>
+                            <span className='yr'>
+                              {post.frontmatter.date.split(' ')[2]}
+                            </span>
+                          </div>
+                        </div>
+                        <h3 className='heading mt-2'>
+                          <Link to={post.fields.slug}>
+                            {post.frontmatter.title}
+                          </Link>
+                        </h3>
+                        <p>{post.excerpt}</p>
+                      </div>
+                    </div>
+                  </div>
+                ))}
             </div>
           </div>
         </section>
       </Layout>
-    )
+    );
   }
 }
+
+BlogIndexPage.propTypes = {
+  data: PropTypes.shape({
+    allMarkdownRemark: PropTypes.shape({
+      edges: PropTypes.array,
+    }),
+  }),
+};
+
+export default BlogIndexPage;
+
+export const blogPageQuery = graphql`
+  query blogPageQuery {
+    allMarkdownRemark(
+      sort: { order: DESC, fields: [frontmatter___date] }
+      filter: { frontmatter: { templateKey: { eq: "blog-post" } } }
+    ) {
+      edges {
+        node {
+          excerpt(pruneLength: 150)
+          id
+          fields {
+            slug
+          }
+          frontmatter {
+            title
+            templateKey
+            date(formatString: "DD MMMM YYYY", locale: "ru")
+            featuredpost
+            featuredimage {
+              childImageSharp {
+                fluid(maxWidth: 450, quality: 100) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`;

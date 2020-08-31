@@ -1,98 +1,109 @@
-import React from 'react'
-import { Link } from 'gatsby'
-import github from '../img/github-icon.svg'
-import logo from '../img/logo.svg'
+import React from 'react';
+import { Link } from 'gatsby';
+import { Navbar as BsNavbar, Nav, Container } from 'react-bootstrap';
 
-const Navbar = class extends React.Component {
-  constructor(props) {
-    super(props)
+import { FaBars } from 'react-icons/fa';
+
+class Navbar extends React.Component {
+  constructor() {
+    super();
     this.state = {
-      active: false,
-      navBarActiveClass: '',
-    }
+      classNav: '',
+    };
+    this.handleScroll = this.handleScroll.bind(this);
   }
 
-  toggleHamburger = () => {
-    // toggle the active boolean in the state
-    this.setState(
-      {
-        active: !this.state.active,
-      },
-      // after state has been updated,
-      () => {
-        // set the class in state for the navbar accordingly
-        this.state.active
-          ? this.setState({
-              navBarActiveClass: 'is-active',
-            })
-          : this.setState({
-              navBarActiveClass: '',
-            })
-      }
-    )
+  componentDidMount() {
+    window.addEventListener('scroll', this.handleScroll);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.handleScroll);
+  }
+
+  handleScroll() {
+    if (window.scrollY > 200) {
+      this.setState({ classNav: ' scrolled awake' });
+    } else {
+      this.setState({ classNav: '' });
+    }
   }
 
   render() {
     return (
-      <nav
-        className="navbar is-transparent"
-        role="navigation"
-        aria-label="main-navigation"
-      >
-        <div className="container">
-          <div className="navbar-brand">
-            <Link to="/" className="navbar-item" title="Logo">
-              <img src={logo} alt="Kaldi" style={{ width: '88px' }} />
-            </Link>
-            {/* Hamburger menu */}
-            <div
-              className={`navbar-burger burger ${this.state.navBarActiveClass}`}
-              data-target="navMenu"
-              onClick={() => this.toggleHamburger()}
-            >
-              <span />
-              <span />
-              <span />
-            </div>
-          </div>
-          <div
-            id="navMenu"
-            className={`navbar-menu ${this.state.navBarActiveClass}`}
-          >
-            <div className="navbar-start has-text-centered">
-              <Link className="navbar-item" to="/about">
-                About
-              </Link>
-              <Link className="navbar-item" to="/products">
-                Products
-              </Link>
-              <Link className="navbar-item" to="/blog">
-                Blog
-              </Link>
-              <Link className="navbar-item" to="/contact">
-                Contact
-              </Link>
-              <Link className="navbar-item" to="/contact/examples">
-                Form Examples
-              </Link>
-            </div>
-            <div className="navbar-end has-text-centered">
-              <a
-                className="navbar-item"
-                href="https://github.com/netlify-templates/gatsby-starter-netlify-cms"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <span className="icon">
-                  <img src={github} alt="Github" />
-                </span>
-              </a>
-            </div>
-          </div>
-        </div>
-      </nav>
-    )
+      <div>
+        <BsNavbar
+          expand='lg'
+          onScroll={this.handleScroll}
+          className={`ftco-navbar-light ${this.state.classNav}`}
+        >
+          <Container>
+            <BsNavbar.Brand href='/'>Андрей Астахов</BsNavbar.Brand>
+            <BsNavbar.Toggle aria-controls='basic-navbar-nav'>
+              <span>
+                <FaBars />
+              </span>{' '}
+              Меню
+            </BsNavbar.Toggle>
+            <BsNavbar.Collapse id='basic-navbar-nav'>
+              <Nav className='ml-auto'>
+                <Nav.Item>
+                  <Link className='nav-link' activeClassName='active' to='/'>
+                    Главная
+                  </Link>
+                </Nav.Item>
+                <Nav.Item>
+                  <Link
+                    className='nav-link'
+                    activeClassName='active'
+                    to='/products'
+                  >
+                    Услуги
+                  </Link>
+                </Nav.Item>
+                <Nav.Item>
+                  <Link
+                    className='nav-link'
+                    activeClassName='active'
+                    to='/contact/schedule'
+                  >
+                    Расписание
+                  </Link>
+                </Nav.Item>
+                <Nav.Item>
+                  <Link
+                    className='nav-link'
+                    activeClassName='active'
+                    to='/about'
+                  >
+                    Обо мне
+                  </Link>
+                </Nav.Item>
+                <Nav.Item>
+                  <Link
+                    className='nav-link'
+                    activeClassName='active'
+                    to='/blog'
+                  >
+                    Статьи
+                  </Link>
+                </Nav.Item>
+                <Nav.Item>
+                  <Link
+                    className='nav-link'
+                    activeClassName='active'
+                    to='/contact'
+                  >
+                    Контакты
+                  </Link>
+                </Nav.Item>
+              </Nav>
+            </BsNavbar.Collapse>
+          </Container>
+        </BsNavbar>
+      </div>
+    );
   }
 }
 
-export default Navbar
+export default Navbar;
